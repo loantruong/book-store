@@ -1,20 +1,18 @@
 'use strict';
 
-angular.module('app')
+angular.module('app').component('home', {
 
-  .component('home', {
+  templateUrl: '/js/components/home.html',
 
-    templateUrl: '/js/components/home.html',
+  bindings: {
+    books: '<'
+  },
 
-    bindings: {
-      books: '<'
-    },
+  controller: function ($log) {
+    'ngInject';
 
-    controller: function ($log) {
-      'ngInject';
-
-      this.$onInit = () => {
-        $log.info('home component init');
-      };
-    }
-  });
+    this.$onInit = () => {
+      $log.info('home component init');
+    };
+  }
+});

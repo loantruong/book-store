@@ -1,12 +1,29 @@
-html, body {
+html,
+body {
   background-color: #efefef;
   font-size: 14px;
 }
+
 .jumbotron {
   background-color: white;
   color: #333;
 }
-code {
+
+.jumbotron h1 {
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.jumbotron code {
   display: block;
   padding: 15px;
+}
+
+.jumbotron code h2 {
+  font-size: 1.5em;
+}
+
+.jumbotron code h2+ul {
+  margin-top: 10px;
 }

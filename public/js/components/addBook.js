@@ -1,16 +1,14 @@
 'use strict';
 
-angular.module('app')
+angular.module('app').component('addBook', {
 
-  .component('addBook', {
+  templateUrl: '/js/components/addBook.html',
 
-    templateUrl: '/js/components/addBook.html',
+  controller: function ($log) {
+    'ngInject';
 
-    controller: function ($log) {
-      'ngInject';
-
-      this.$onInit = () => {
-        $log.info('addBook component init');
-      };
-    }
-  });
+    this.$onInit = () => {
+      $log.info('addBook component init');
+    };
+  }
+});

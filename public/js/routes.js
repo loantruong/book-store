@@ -1,22 +1,20 @@
 'use strict';
 
-angular.module('app')
+angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
+  'ngInject';
 
-  .config(function ($stateProvider, $urlRouterProvider) {
-    'ngInject';
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      component: 'home',
+      resolve: {
+        books: (BooksService) => BooksService.query().$promise
+      }
+    })
+    .state('addBook', {
+      url: '/addbook',
+      component: 'addBook'
+    });
 
-    $stateProvider
-      .state('home', {
-        url: '/home',
-        component: 'home',
-        resolve: {
-          books: (BooksService) => BooksService.query().$promise
-        }
-      })
-      .state('addBook', {
-        url: '/addbook',
-        component: 'addBook'
-      });
-
-    $urlRouterProvider.otherwise('/home');
-  });
+  $urlRouterProvider.otherwise('/home');
+});
