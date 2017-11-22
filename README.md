@@ -4,9 +4,9 @@ _Checkpoint MEAN stack_ - **4h**
 
 **Sans le forker**, clone le projet sur ton ordinateur.
 
-Crée ensuite une branche portant ton prénom suivi de la première lettre de ton nom de famille et travaille dans cette branche.
+Crée ensuite une branche portant **ton prénom** et travaille dans cette branche.
 
-Installe et lance le serveur pour afficher la home page. Toutes les instructions sont affichées sur les pages du site.
+Installe et lance le serveur pour afficher la home page. Toutes les instructions sont affichées sur cette page.
 
 Petit exercice préliminaire:
   - evalue le temps que vas mettre pour faire tout ce qui est demandé, hors bonus
