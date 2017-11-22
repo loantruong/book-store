@@ -1,4 +1,4 @@
-const Book = require('../models/book');
+const models = require('../models');
 
 /**
  * The Book controller object
@@ -7,7 +7,7 @@ function BooksController() {
 }
 
 BooksController.prototype.list = function (req, res, next) {
-  Book.findAll().then((books) => {
+  models.book.findAll().then((books) => {
     res.json(books);
   }).catch((err) => {
     next(err);

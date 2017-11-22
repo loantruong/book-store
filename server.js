@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 
 const booksRouter = require('./server/routes/books');
+const models = require('./server/models');
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -24,11 +25,18 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 /**
  * Declare our web service books api
  */
-app.use('/books', booksRouter());
+app.use('/books', booksRouter(express));
 
 /**
  * Connect to our database
  */
+models.sequelize.sync({
+  alter: false
+}).then(() => {
+  console.log('Database connected');
+}).catch((err) => {
+  console.log('Error connecting database:', err);
+});
 
 /**
  * Start listening on the configured port number

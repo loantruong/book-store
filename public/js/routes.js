@@ -10,12 +10,10 @@ angular.module('app')
         url: '/home',
         component: 'home',
         resolve: {
-          books: function (BooksService) {
-            return BooksService.getBooks();
-          }
+          books: (BooksService) => BooksService.query().$promise
         }
       })
-      .state('add-book', {
+      .state('addBook', {
         url: '/addbook',
         component: 'addBook'
       });

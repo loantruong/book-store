@@ -4,13 +4,13 @@ angular.module('app')
 
   .component('home', {
 
-    templateUrl: './home.html',
+    templateUrl: '/js/components/home.html',
 
     bindings: {
       books: '<'
     },
 
-    controller: function ($log, BooksService) {
+    controller: function ($log) {
       'ngInject';
 
       this.$onInit = () => {

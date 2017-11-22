@@ -4,9 +4,9 @@ angular.module('app')
 
   .component('addBook', {
 
-    templateUrl: './addBook.html',
+    templateUrl: '/js/components/addBook.html',
 
-    controller: function ($log, BooksService) {
+    controller: function ($log) {
       'ngInject';
 
       this.$onInit = () => {
