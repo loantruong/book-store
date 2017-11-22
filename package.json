@@ -1,0 +1,29 @@
+{
+  "name": "2017-checkpoint-3",
+  "version": "1.0.0",
+  "description": "Bordeaux Sep2017 - Checkpoint n°3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Eric LEON",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.11",
+    "angular": "^1.6.4",
+    "angular-resource": "^1.6.6",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.3",
+    "mysql2": "^1.5.1",
+    "path": "^0.12.7",
+    "sequelize": "^4.22.11"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-angular": "^3.1.1",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}

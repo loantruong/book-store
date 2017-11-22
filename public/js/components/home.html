@@ -1,0 +1,23 @@
+<div class="container">
+  <label>The books store</label>
+  <code>
+    <strong>TODO</strong>: create the home page.<br/>
+    It should:
+    <ul>
+      <li>display all the books contained in the library</li>
+      <li>display within each div.book the book image, the title and the author name</li>
+      <li>open a book details view when its div.book is clicked (add a new route/component and a return to home page button)</li>
+      <li><strong>BONUS</strong>: Add the delete ability on the book's details view</li>
+      <li><strong>BONUS</strong>: Ask for deletion confirmation with a Bootstrap modal dialog</li>
+    </ul>
+    <strong>PLEASE</strong>, if you finish before time the requested functionalities, take advantage of the remaining time to improve the site aesthetic will be much appreciated ;)
+    <br/><br/>
+    Comment these instructions when done.
+  </code>
+  <div class="books">
+    <div class="book" ng-repeat="b in $ctrl.books track by b._id">
+    </div>
+  </div>
+  <hr />
+  <a class="btn btn-primary" ui-sref="add-book">Add...</a>
+</div>
