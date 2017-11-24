@@ -1,0 +1,5 @@
+The home page: 2h
+
+The book's details view: 2H
+
+The book add view: 1h
