@@ -20,8 +20,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
       url: '/details/:id',
       component: 'bookDetails',
       resolve: {
-        details: function (BooksService, $transition$) {
-
+        details: (BooksService, $transition$) => {
           return BooksService.query($transition$.params().id);
         }
       }
