@@ -14,16 +14,55 @@ BooksController.prototype.list = function (req, res, next) {
   });
 };
 
+BooksController.prototype.findOne = function (req, res, next) {
+  models.book.findById(req.params.id, {
+  }).then((book) => {
+    if (book) {
+      res.json(book);
+    } else {
+      res.sendStatus(404);
+    }
+  }).catch((err) => {
+    res.status(500).send(err);
+  });
+};
+
 BooksController.prototype.create = function (req, res, next) {
-  res.status(500).send('TODO');
+  let result;
+  models.book.create(req.body).then((book) => {
+    result = book;
+  }).then((info) => {
+    res.json(result);
+  }).catch((err) => {
+    res.status(500).send(err);
+  });
 };
 
 BooksController.prototype.update = function (req, res, next) {
-  res.status(500).send('TODO');
+  models.book.findById(req.params.id, {
+  }).then((book) => {
+    if (book) {
+      res.json(book);
+    } else {
+      res.sendStatus(404);
+    }
+  }).catch((err) => {
+    res.status(500).send(err);
+  });
 };
 
 BooksController.prototype.remove = function (req, res, next) {
-  res.status(500).send('TODO');
+  models.book.findOne({
+    where: {
+      id: req.params.id
+    }
+  }).then((book) => {
+    return book.destroy();
+  }).then(() => {
+    res.sendStatus(200);
+  }).catch((err) => {
+    res.status(500).send(err);
+  });
 };
 
 module.exports = BooksController;

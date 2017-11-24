@@ -1,4 +1,28 @@
 <div class="container">
-  <form>
+  <form method="POST" ng-submit="$ctrl.validate()">
+    <div class="error" ng-show="$ctrl.error">{{$ctrl.error}}</div>
+    <div class="form-group">
+      <label for="title">Titre du live</label>
+      <input id="title" name="title" type="text" class="form-control" ng-model="$ctrl.book.title">
+    </div>
+    <div class="form-group">
+      <label for="author">Auteur</label>
+      <input id="author" name="author" type="text" class="form-control" ng-model="$ctrl.book.author">
+    </div>
+    <div class="form-group">
+      <label for="isbn">isbn</label>
+      <input id="isbn" name="isbn" type="text" class="form-control" ng-model="$ctrl.book.isbn">
+    </div>
+    <div class="form-group">
+        <label for="image">lien de l'image</label>
+        <input id="image" name="image" type="text" class="form-control" ng-model="$ctrl.book.imageUrl">
+      </div>
+    <div class="form-group">
+      <label for="resume">Résumé</label>
+      <textarea id="resume" name="resume" class="form-control" rows="3" ng-model="$ctrl.book.resume"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Enregister</button>
+    <button type="button" class="btn btn-default" ui-sref="home">retour</button>
   </form>
 </div>

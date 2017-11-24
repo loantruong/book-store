@@ -2,9 +2,15 @@
   <h1>The books store</h1>
   <instructions></instructions>
   <div class="books">
-    <div class="book">
+    <div class="row">
+      <div ng-repeat="book in $ctrl.books" class="book col-md-3">
+        <img src="{{ book.imageUrl }}" alt=" {{ book.title }}" class="img-book">
+        <p>{{ book.title }}</p>
+        <p>{{ book.author }}</p>
+        <button ng-click="$ctrl.displayDetails(book.id)" class="btn btn-primary"> voir plus</button>
+      </div>
     </div>
+    
+    <hr />
+    <a class="btn btn-primary" ui-sref="addBook">Add...</a>
   </div>
-  <hr />
-  <a class="btn btn-primary" ui-sref="">Add...</a>
-</div>

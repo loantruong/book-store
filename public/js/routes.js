@@ -14,6 +14,21 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
     .state('addBook', {
       url: '/addbook',
       component: 'addBook'
+    })
+    .state({
+      name: 'details',
+      url: '/details/:id',
+      component: 'bookDetails',
+      resolve: {
+        details: function (BooksService, $transition$) {
+
+          return BooksService.query($transition$.params().id);
+        }
+      }
+    })
+    .state('instruction', {
+      url: '/instructions',
+      component: 'instructions'
     });
 
   $urlRouterProvider.otherwise('/home');
