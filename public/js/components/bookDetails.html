@@ -1,0 +1,41 @@
+<div class="row margin-block">
+  <div class="error" ng-show="$ctrl.error">{{$ctrl.error}}</div>
+  <div class="col-md-4 col-md-offset-2">
+    <img ng-src="{{$ctrl.books.imageUrl}}" class="pull-right img-responsive img-book-details" alt="{{$ctrl.books.title}}">
+  </div>
+  <div class="col-md-4">
+    <h3>titre : {{$ctrl.books.title}}</h3>
+    <h4>auteur : {{$ctrl.books.author}}</h4>
+    <p><span class="text-uppercase">isbn: </span>{{$ctrl.books.isbn}}</p>
+    <p>resumé : {{$ctrl.books.resume}}</p>
+
+    <button type="button" class="btn btn-default" ui-sref="home">return book store</button>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">delete</button>
+  </div>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">delete</h4>
+      </div>
+      <div class="modal-body center-block">
+        <img ng-src="{{$ctrl.books.imageUrl}}" class="display-inline-block img-responsive img-book-details img-book-details-delete" alt="{{$ctrl.books.title}}">
+        <div class="text-block display-inline-block">
+          <h3>titre : {{$ctrl.books.title}}</h3>
+          <h4>auteur : {{$ctrl.books.author}}</h4>
+          <p>isbn : {{$ctrl.books.isbn}}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" ng-click="$ctrl.delete()">confirm delete</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,29 @@
+<div class="container-fluid">
+  <div class="jumbotron bg">
+    <h1>The books store</h1>
+  </div>
+</div>
+  <search></search>
 <div class="container">
-  <h1>The books store</h1>
-  <instructions></instructions>
+  <div class="row">
+    <a class="btn btn-primary pull-right btn-new-book" ui-sref="addBook">Add a new book</a>
+  </div>
   <div class="books">
     <div class="row">
       <div ng-repeat="book in $ctrl.books" class="book col-md-3">
-        <img src="{{ book.imageUrl }}" alt=" {{ book.title }}" class="img-book">
-        <p>{{ book.title }}</p>
-        <p>{{ book.author }}</p>
-        <button ng-click="$ctrl.displayDetails(book.id)" class="btn btn-primary"> voir plus</button>
+        <div class="img-block">
+          <img ng-src="{{ book.imageUrl }}" alt="{{ book.title }}" class="img-book img-responsive center-block">
+        </div>
+        <div class="margin-block text-center">
+          <h3>{{ book.title }}</h3>
+          <h4><span>by: </span>{{ book.author }}</h4>
+        </div>
+        <button ng-click="$ctrl.displayDetails(book.id)" class="btn btn-primary center-block reed-more">reed more</button>
       </div>
     </div>
-    
-    <hr />
-    <a class="btn btn-primary" ui-sref="addBook">Add...</a>
+
+    <hr>
+
+    <instructions></instructions>
   </div>
+</div>

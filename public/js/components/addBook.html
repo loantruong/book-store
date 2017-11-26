@@ -3,23 +3,28 @@
     <div class="error" ng-show="$ctrl.error">{{$ctrl.error}}</div>
     <div class="form-group">
       <label for="title">Titre du live</label>
-      <input id="title" name="title" type="text" class="form-control" ng-model="$ctrl.book.title">
+      <input type="text" id="title" name="title" type="text" class="form-control" 
+      ng-model="$ctrl.book.title" title="between 2 and 80 characters" pattern=".{2,80}" required>
     </div>
     <div class="form-group">
       <label for="author">Auteur</label>
-      <input id="author" name="author" type="text" class="form-control" ng-model="$ctrl.book.author">
+      <input type="text" id="author" name="author" type="text" class="form-control" ng-model="$ctrl.book.author" 
+      title="between 2 and 40 characters and no special characters" pattern="[A-z_-]{2,40}" required>
     </div>
     <div class="form-group">
-      <label for="isbn">isbn</label>
-      <input id="isbn" name="isbn" type="text" class="form-control" ng-model="$ctrl.book.isbn">
+      <label for="isbn" class="text-uppercase">isbn</label>
+      <input type="text" id="isbn" name="isbn" type="text" class="form-control" ng-model="$ctrl.book.isbn"
+      title="norm ISBN 13: 978-0399155345" pattern="((978[\--– ])?[0-9][0-9\--– ]{10}[\--– ][0-9xX])|((978)?[0-9]{10}[0-9Xx])" required>
     </div>
     <div class="form-group">
         <label for="image">lien de l'image</label>
-        <input id="image" name="image" type="text" class="form-control" ng-model="$ctrl.book.imageUrl">
+        <input type="url" id="image" name="image" type="text" class="form-control" ng-model="$ctrl.book.imageUrl" 
+        title="must be url" required>
       </div>
     <div class="form-group">
       <label for="resume">Résumé</label>
-      <textarea id="resume" name="resume" class="form-control" rows="3" ng-model="$ctrl.book.resume"></textarea>
+      <textarea id="resume" name="resume" class="form-control" rows="3" ng-model="$ctrl.book.resume" 
+      title="between 2 and 4096 characters" pattern=".{2,4096}"required></textarea>
     </div>
 
     <button type="submit" class="btn btn-success">Enregister</button>

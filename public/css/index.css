@@ -3,16 +3,27 @@ body {
   background-color: #efefef;
   font-size: 14px;
 }
-
+.container-fluid{
+  padding: 0;
+}
+/* HP */
 .jumbotron {
   background-color: white;
   color: #333;
 }
-
+.jumbotron.bg{
+  background: url(../img/books.jpg) no-repeat center;
+  background-size: cover;
+  border-radius: inherit;
+}
 .jumbotron h1 {
-  font-size: 2em;
+  font-size: 3em;
   margin-top: 0;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 1px 3px 9px #282828;
+  color: #fff;
+  font-weight: bold;
 }
 
 .jumbotron code {
@@ -28,5 +39,41 @@ body {
   margin-top: 10px;
 }
 .img-book{
-  max-width: 100px;
+  max-width: 250px;
+  max-height: 250px;
+  border: 1px solid #cacaca;
+}
+.img-block{
+  height: 250px;
+}
+.margin-block{
+  margin: 2rem 0;
+}
+.margin-block.text-center {
+  height: 80px;
+}
+.btn-new-book{
+  margin-bottom: 2rem;
+}
+button.reed-more{
+  margin-bottom: 5rem;
+}
+/* SEARCH */
+#search{
+  margin: 1rem 0 2rem 0;
+}
+
+/* DETAILS */
+.img-book-details{
+  max-height: 500px;
+  border: 1px solid #cacaca;
+}
+.img-book-details-delete{
+  max-height: 200px;
+}
+button.btn-danger, .text-block{
+  margin-left: 2rem;
+}
+.display-inline-block{
+  display: inline-block;
 }

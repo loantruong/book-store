@@ -17,5 +17,9 @@ module.exports = function (express) {
     return controller.create(req, res, next);
   });
 
+  router.delete('/:id', (req, res, next) => {
+    return controller.delete(req, res, next);
+  });
+
   return router;
 };

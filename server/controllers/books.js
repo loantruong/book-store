@@ -51,7 +51,7 @@ BooksController.prototype.update = function (req, res, next) {
   });
 };
 
-BooksController.prototype.remove = function (req, res, next) {
+BooksController.prototype.delete = function (req, res, next) {
   models.book.findOne({
     where: {
       id: req.params.id
