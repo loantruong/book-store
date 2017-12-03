@@ -1,5 +1,5 @@
 {
-  "extends": ["google", "plugin:angular/johnpapa"],
+  "extends": ["google", "plugin:angular/johnpapa", "webpack"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 6

@@ -15,8 +15,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
       url: '/addbook',
       component: 'addBook'
     })
-    .state({
-      name: 'details',
+    .state('details', {
       url: '/details/:id',
       component: 'bookDetails',
       resolve: {
@@ -25,6 +24,13 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
             id: $transition$.params().id
           }).$promise;
         }
+      }
+    })
+    .state('search', {
+      url: '/result',
+      component: 'resultSearch',
+      resolve: {
+        googleBooks: (GoogleBooksService) => GoogleBooksService.query().$promise
       }
     })
     .state('instruction', {
