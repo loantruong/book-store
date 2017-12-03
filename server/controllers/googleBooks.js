@@ -14,15 +14,12 @@ function googleBooksController() {
   };
 
   googleBooksController.prototype.search = function (req, res, next) {
-    books.search(req.params, options, function (error, results, apiResponse) {
-      if (!error) {
-        console.log(results);
-      } else {
-        console.log(error);
-      }
+    books.search().then((books) => {
+      res.json(books);
+    }).catch((err) => {
+      next(err);
     });
   }
-
 }
 
 module.exports = googleBooksController;

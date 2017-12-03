@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 
 const booksRouter = require('./server/routes/books');
-const googleBooksRouter = require('./server/routes/googleBooks');
 const models = require('./server/models');
 
 const port = process.env.PORT || 3000;
@@ -27,7 +26,6 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
  * Declare our web service books api
  */
 app.use('/books', booksRouter(express));
-app.use('/googleBooks', googleBooksRouter(express));
 
 /**
  * Connect to our database
