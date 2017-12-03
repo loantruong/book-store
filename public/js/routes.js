@@ -29,8 +29,11 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
     .state('search', {
       url: '/result',
       component: 'resultSearch',
+      params: {
+        search: null
+      },
       resolve: {
-        googleBooks: (GoogleBooksService) => GoogleBooksService.query().$promise
+        googleBooks: (GoogleBooksService, $stateParams) => GoogleBooksService.get($stateParams).$promise
       }
     })
     .state('instruction', {

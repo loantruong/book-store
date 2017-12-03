@@ -5,24 +5,24 @@ const apiUrl = "https://www.googleapis.com/books/v1/volumes?q=";
  * The Book controller object
  */
 function googleBooksController() {
-  
   googleBooksController.prototype.search = function (req, res, next) {
-
-    https.get(apiUrl+req.params.query, (resp) => {
-      let data = '';
     
-      resp.on('data', (chunk) => {
-        data += chunk;
-      });
+      https.get(apiUrl+req.params.search, (resp) => {
+      let data = '';
     
-      resp.on('end', () => {
-        res.json(data);
-      });
+      resp.on('data', (chunk) => {
+        data += chunk;
+      });
+    
+      resp.on('end', () => {
+        res.send(JSON.parse(data));
+      });
     
     }).on("error", (err) => {
-      console.log("Error: " + err.message);
+      console.log("Error: " + err.message);
     });
   }
+
 }
 
 module.exports = googleBooksController;

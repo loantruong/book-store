@@ -12,11 +12,11 @@ angular
       };
 
       this.getBooks = (query) => {
-        GoogleBooksService.get(query).then((data) => {
-          $state.go('search');
-        }).catch((error) => {
-          this.error = error;
-        });
+          this.query = query
+          $state.go('search', {
+            search: query
+          });
       };
+
     }
   });

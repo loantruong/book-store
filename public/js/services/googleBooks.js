@@ -7,14 +7,9 @@ angular
 
     this.get = (query) => {
       let defer = $q.defer();
-<<<<<<< HEAD
-      
-      $http.get(`https://www.googleapis.com/books/v1/volumes?q=/:${query}`)
-      .then((response) => {
-=======
   
-      return $http.get('/googleBooks/search/'+query).then((response) => {
->>>>>>> 827df7ade50bac29ab89ff6e74281fac3dad4128
+      $http.get(`/googleBooks/search/${query}`)
+      .then((response) => {
         defer.resolve(response.data);
       }).catch((error) => {
         defer.reject(error);
