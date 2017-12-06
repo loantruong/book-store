@@ -1,12 +1,9 @@
-<div class="container-fluid">
-  <div class="jumbotron bg">
-    <h1>The books store</h1>
-  </div>
-</div>
-  <search></search>
+<search></search>
 <div class="container">
   <div class="row">
-    <a class="btn btn-primary pull-right btn-new-book" ui-sref="addBook">Add a new book</a>
+    <div class="col-md-12">
+      <a class="btn btn-primary pull-right btn-new-book" ui-sref="addBook">Add a new book</a>
+    </div>
   </div>
   <div class="books">
     <div class="row">
@@ -16,7 +13,8 @@
         </div>
         <div class="margin-block text-center">
           <h3>{{ book.title }}</h3>
-          <h4><span>by: </span>{{ book.author }}</h4>
+          <h4>
+            <span>by: </span>{{ book.author }}</h4>
         </div>
         <button ng-click="$ctrl.displayDetails(book.id)" class="btn btn-primary center-block reed-more">reed more</button>
       </div>

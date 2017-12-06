@@ -7,14 +7,14 @@ const apiUrl = "https://www.googleapis.com/books/v1/volumes?q=";
 function googleBooksController() {
   googleBooksController.prototype.search = function (req, res, next) {
     
-      https.get(apiUrl+req.params.search, (resp) => {
+      https.get(`${apiUrl}${req.params.search}`, (result) => {
       let data = '';
     
-      resp.on('data', (chunk) => {
+      result.on('data', (chunk) => {
         data += chunk;
       });
     
-      resp.on('end', () => {
+      result.on('end', () => {
         res.send(JSON.parse(data));
       });
     

@@ -7,12 +7,15 @@ angular
 
     this.get = (query) => {
       let defer = $q.defer();
-  
-      $http.get(`/googleBooks/search/${query}`)
-      .then((response) => {
-        defer.resolve(response.data);
+
+      let userSearch = query.search;
+      
+      $http.get(`/googleBooks/search/${userSearch}`).then((response) => {
+        defer.resolve(response.data.items);
       }).catch((error) => {
         defer.reject(error);
-      })
+      });
+
+      return defer.promise;
     }
   });

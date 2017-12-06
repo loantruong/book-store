@@ -27,13 +27,17 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('search', {
-      url: '/result',
+      url: '/result/:search',
       component: 'resultSearch',
       params: {
         search: null
       },
       resolve: {
-        googleBooks: (GoogleBooksService, $stateParams) => GoogleBooksService.get($stateParams).$promise
+        books: (GoogleBooksService, $transition$) => {
+          return GoogleBooksService.get({
+            search: $transition$.params().search
+          });
+        }
       }
     })
     .state('instruction', {

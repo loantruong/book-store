@@ -6,7 +6,7 @@ angular
     templateUrl: '/js/components/resultSearch.html',
 
     bindings: {
-      googleBooks: '<'
+      books: '<'
     },
 
     controller: function ($log, $state) {
@@ -15,6 +15,5 @@ angular
       this.$onInit = () => {
         $log.info('resultSearch component init');
       };
-
     }
   });

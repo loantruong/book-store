@@ -1,16 +1,25 @@
 <div class="container">
   <div class="books">
     <div class="row">
-      <div ng-repeat="book in $ctrl.googleBooks" class="book col-md-3">
+      <div class="col-md-12">
+        <h2 class="display-inline-block">list of available books</h2>
+        <div class="pull-right display-inline-block">
+          <button type="button" class="btn btn-default" ui-sref="home">return home page</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div ng-repeat="book in $ctrl.books" class="book col-md-3">
         <div class="img-block">
-          <img ng-src="{{ book.items.volumeInfo.selfLink }}" alt="{{ book.items.volumeInfo.title }}" class="img-book img-responsive center-block">
+          <img ng-src="{{ book.volumeInfo.imageLinks.thumbnail }}" alt="{{ book.volumeInfo.title }}" class="img-book img-responsive center-block">
         </div>
         <div class="margin-block text-center">
-          <h3>{{ book.items.volumeInfo.title }}</h3>
+          <h3>{{ book.volumeInfo.title }}</h3>
           <h4>
-            <span>by: </span>{{ book.items.volumeInfo.authors }}</h4>
+            <span>by: </span>{{ book.volumeInfo.authors }}</h4>
         </div>
         <button ng-click="$ctrl.displayDetails(book.id)" class="btn btn-primary center-block reed-more">reed more</button>
+        <a class="btn btn-primary pull-right btn-new-book" ui-sref="addBook">Add a new book</a>
       </div>
     </div>
   </div>
