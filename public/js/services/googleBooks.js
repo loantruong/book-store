@@ -17,5 +17,5 @@ angular
       });
 
       return defer.promise;
-    }
+    };
   });

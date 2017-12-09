@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <a class="btn btn-primary pull-right btn-new-book" ui-sref="addBook">Add a new book</a>
+      <a class="hvr-underline-from-left pull-right btn-new-book" ui-sref="addBook">Add a new book <i class="fa fa-plus" aria-hidden="true"></i></a>
     </div>
   </div>
   <div class="books">
@@ -16,7 +16,7 @@
           <h4>
             <span>by: </span>{{ book.author }}</h4>
         </div>
-        <button ng-click="$ctrl.displayDetails(book.id)" class="btn btn-primary center-block reed-more">reed more</button>
+        <button ng-click="$ctrl.displayDetails(book.id)" class="hvr-underline-from-left btn btn-primary center-block reed-more">reed more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
       </div>
     </div>
   </div>

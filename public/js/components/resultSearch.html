@@ -2,24 +2,37 @@
   <div class="books">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="display-inline-block">list of available books</h2>
+        <h2 class="display-inline-block">List of books</h2>
         <div class="pull-right display-inline-block">
           <button type="button" class="btn btn-default" ui-sref="home">return home page</button>
         </div>
       </div>
     </div>
     <div class="row">
-      <div ng-repeat="book in $ctrl.books" class="book col-md-3">
-        <div class="img-block">
-          <img ng-src="{{ book.volumeInfo.imageLinks.thumbnail }}" alt="{{ book.volumeInfo.title }}" class="img-book img-responsive center-block">
+        <search></search>
+    </div>
+    <div class="row book-search">
+      <hr>
+      <div ng-repeat="book in $ctrl.books" class="book col-md-12">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="img-block">
+              <img ng-src="{{ book.volumeInfo.imageLinks.thumbnail }}" alt="{{ book.volumeInfo.title }}" class="img-book img-responsive center-block">
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="text">
+              <h3>{{ book.volumeInfo.title }}</h3>
+              <p>
+                <span>by: </span>{{ book.volumeInfo.authors }}</p>
+
+              <p class="text-uppercase">isbn 13: {{book.volumeInfo.industryIdentifiers[1].identifier}}</p>
+              <p>description: {{book.volumeInfo.description}}</p>
+            </div>
+            <button ng-click="$ctrl.addBook(book.id)" class="hvr-underline-from-left btn btn-save">add</button>
+          </div>
         </div>
-        <div class="margin-block text-center">
-          <h3>{{ book.volumeInfo.title }}</h3>
-          <h4>
-            <span>by: </span>{{ book.volumeInfo.authors }}</h4>
-        </div>
-        <button ng-click="$ctrl.displayDetails(book.id)" class="btn btn-primary center-block reed-more">reed more</button>
-        <a class="btn btn-primary pull-right btn-new-book" ui-sref="addBook">Add a new book</a>
+        <hr>
       </div>
     </div>
   </div>

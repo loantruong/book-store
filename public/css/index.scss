@@ -1,0 +1,155 @@
+html,
+body {
+  background-color: #efefef;
+  font-size: 14px;
+}
+.container-fluid{
+  padding: 0;
+}
+h2{
+  font-family: 'Pacifico', cursive;
+  &.details{
+    margin-bottom: 2rem;
+  }
+}
+/* HP */
+.jumbotron {
+  background-color: white;
+  color: #333;
+  &.bg{
+    background: url(../img/books.jpg) no-repeat center;
+    background-size: cover;
+    border-radius: inherit;
+  }
+  h1 {
+    font-size: 3em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 1px 3px 9px #282828;
+    color: #fff;
+    font-weight: bold;
+  }
+  code {
+    display: block;
+    padding: 15px;
+    h2 {
+      font-size: 1.5em;
+      +ul {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+.img-book{
+  max-width: 250px;
+  max-height: 250px;
+  border: 1px solid #cacaca;
+}
+.img-block{
+  height: 250px;
+}
+.margin-block{
+  margin: 2rem 0;
+}
+.margin-block.text-center {
+  height: 80px;
+}
+.btn-new-book{
+  margin-bottom: 2rem;
+}
+button {
+  border-radius: inherit !important;
+  &.reed-more{
+    margin-bottom: 5rem;
+    background: #377871 !important;
+  }
+  &.btn-danger, .text-block{
+    margin-left: 2rem;
+  }
+  &.btn-save{
+    background-color: #377871;
+    border-color: #68baca;
+    color: white;
+  }
+}
+/* SEARCH */
+#search{
+  margin: 1rem 0 2rem 0;
+}
+
+/* DETAILS */
+.img-book-details{
+  max-height: 500px;
+  border: 1px solid #cacaca;
+}
+.img-book-details-delete{
+  max-height: 200px;
+}
+
+.display-inline-block{
+  display: inline-block;
+}
+#search-book {
+  input {
+    width: 80%;
+    display: inline-block;
+  }
+  button {
+    border-radius: .2rem !important;
+  }
+}
+.btn-new-book{
+  margin-bottom: 2rem;
+  margin: .4rem 0 2rem 0;
+  padding: 1em;
+  cursor: pointer;
+  background: #377871;
+  color: white !important;
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.hvr-underline-from-left {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #000908;
+    height: 2px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  &:hover:before, &:focus:before, &:active:before {
+    right: 0;
+  }
+}
+.book-search {
+  margin-top: 2rem;
+  h3{
+    margin-top: 0;
+  }
+  .img-block{
+    padding-top: 15% !important;
+  }
+}
+hr{
+  border: 1px solid rgb(213, 213, 213) !important;
+}
