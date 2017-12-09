@@ -1,11 +1,11 @@
 {
   "development": {
-    "use_env_variable": "CHECKPOINT3_DEV_URI"
+    "use_env_variable": "BOOK_STORE_DEV_URI"
   },
   "test": {
-    "use_env_variable": "CHECKPOINT3_TEST_URI"
+    "use_env_variable": "BOOK_STORE_TEST_URI"
   },
   "production": {
-    "use_env_variable": "CHECKPOINT3_PROD_URI"
+    "use_env_variable": "BOOK_STORE_PROD_URI"
   }
 }

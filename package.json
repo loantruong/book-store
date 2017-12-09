@@ -1,7 +1,7 @@
 {
-  "name": "2017-checkpoint-3",
+  "name": "book-store",
   "version": "1.0.0",
-  "description": "Bordeaux Sep2017 - Checkpoint n°3",
+  "description": "book store",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "start": "node server.js",
     "seed": "./node_modules/.bin/sequelize db:seed:all"
   },
-  "author": "Eric LEON",
+  "author": "loan",
   "license": "ISC",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.11",

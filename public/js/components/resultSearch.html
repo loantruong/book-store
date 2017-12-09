@@ -29,7 +29,7 @@
               <p class="text-uppercase">isbn 13: {{book.volumeInfo.industryIdentifiers[1].identifier}}</p>
               <p>description: {{book.volumeInfo.description}}</p>
             </div>
-            <button ng-click="$ctrl.addBook(book.id)" class="hvr-underline-from-left btn btn-save">add</button>
+            <button ng-click="$ctrl.addBook(book.id)" ng-disabled="book" class="hvr-underline-from-left btn btn-save">add</button>
           </div>
         </div>
         <hr>
