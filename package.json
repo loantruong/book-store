@@ -5,9 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "mon": "nodemon server.js",
+    "sequelize": "./node_modules/.bin/sequelize",
+    "dev": "nodemon server.js",
     "start": "node server.js",
-    "seed": "./node_modules/.bin/sequelize db:seed:all"
+    "create-db": "npm run sequelize db:create",
+    "migrations": "npm run sequelize db:migrate",
+    "seed": "npm run sequelize db:seed:all",
+    "init": "npm run create-db && npm run migrations && npm run seed && npm run start"
   },
   "author": "loan",
   "license": "ISC",

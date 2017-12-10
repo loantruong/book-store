@@ -20,25 +20,19 @@ ___
   > cd book-store
   > npm install
 ```
-create MySQL database
-```
-  CREATE database bookStore;
-```
+
 create an environment variable (.zshrc or .bashrc)
 ```
   > export BOOK_STORE_DEV_URI=mysql://yourNameUser:yourPassword@localhost/bookStore
   > relaunch your IDE and your terminal
 ```
-launch the server to create the database
+
+install the database and the fixtures
 ```
-  > node server
+  > npm run init
 ```
-stop the server to run seeders
-```
-  > stop server: ctrl + c
-  > npm run seed
-```
+
 start the project
 ```
-  > npm run start || npm run mon
+  > npm run start || npm run dev # will use nodemon
 ```
