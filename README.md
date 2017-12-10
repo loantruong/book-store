@@ -32,7 +32,7 @@ install the database and the fixtures
   > npm run init
 ```
 
-start the project
+start the project on localhost 3002
 ```
   > npm run start || npm run dev # will use nodemon
 ```
